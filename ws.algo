@@ -1,0 +1,63 @@
+//Decision Making 
+//-Ticket Pricing
+ 
+ function TicketPrice(age: Integer): String;
+ var
+  price: Integer;
+ begin
+  if age <= 12 then
+    price := 10;
+  else if (age >= 13) and (age <= 17) then
+    price := 15;
+  else
+    price := 20;
+
+  Result := Format('The ticket price for a %d-year-old is $%d.', [age, price]);
+ end;
+
+//- Weather Clothing Adviser:
+ function GetClothingAdvice(temperature: Integer; rain: String): String;
+ var
+  advice: String;
+ begin
+
+  advice := '';
+
+  if temperature > 30 then
+    advice := 'Wear shorts and a T-shirt. ';
+  else if temperature > 15 then
+    advice := 'Take a jacket with you. ';
+  else
+    advice := 'Wear a coat and scarf. ';
+
+  end =if 
+
+  if rain = 'yes' then
+    advice := advice + 'Dont forget your umbrella!';
+  else if rain = 'no' then
+    advice := advice + 'No umbrella needed today.';
+   end-if 
+
+  Result := advice;
+ end;
+
+//Recursion:
+//Fibonacci Sequence:
+ function Fibonacci(n: Integer): Integer;
+ begin
+  if n = 0 then
+    Result := 0;
+  else if n = 1 then
+    Result := 1;
+  else
+    Result := Fibonacci(n - 1) + Fibonacci(n - 2);
+ end;
+
+//Power Function:
+ function Pow(n: Integer; p: Integer): Integer;
+ begin
+  if p = 0 then
+    Result := 1;
+  else
+    Result := n * Pow(n, p - 1);
+ end;
